@@ -15,3 +15,27 @@
 */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+	background: #f5f8fa;
+}
+
+.navbar {
+	background: #FFFFFF;
+}
+
+.rounded-img {
+	height: 25px;
+	width: 25px;
+}
+
+.navbar-brand {
+	padding: 5px 15px;
+}
+
+@media(min-width:768px){
+	.navbar-brand {
+		position: absolute;
+		left: 50%;
+	}
+}
