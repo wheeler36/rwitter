@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+  <div class="panel panel-default post-form-panel">
+    <div class="panel-body row">
+      
+      <div class="col-sm-1 avatar">
+      </div>
+
+      <div class="col-sm-11">
+        <%= form_for(@newPost) do |f| %>
+          <div class="field">
+            <%= f.text_field :content, autofocus: true, class: "form-control" %>
+            <span type="button" class="btn btn-submit"><%= f.submit "Add Post", class: "btn btn-primary" %></span>
+          </div>      
+        <% end %>
+      </div>
+      
+    </div>
+  </div>
+<% end %>

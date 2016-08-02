@@ -16,12 +16,14 @@
   </div>
 
   <div class="col-xs-6">
+    <%= render '/components/post_form' %>
+
     <% @posts.each do |post| %>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p><%= post.content %></p>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p><%= post.content %></p>
+        </div>
       </div>
-    </div>
     <% end %>
   </div>
 
