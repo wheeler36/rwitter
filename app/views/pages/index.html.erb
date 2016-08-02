@@ -1,2 +1,71 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<% if !user_signed_in? %>
+    <style>
+        body {
+          background-image: url('/assets/prague.jpg');
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-attachment: fixed;
+          min-height: 100%;
+        }
+        h1 {
+            color: white;
+            font-weight: bold;
+        }
+        .text {
+            color: white;
+            font-weight: 300;
+            font-size: 150%;
+        }
+        .footer-links {
+            text-align: center;
+            color: white;
+            margin-top: 30%;
+            font-size: 90%;
+        }
+        .user-links {
+            margin-top: 5%;
+        }
+        .user-links a {
+          color: #5d4a4a;
+        }
+        .user-links a:hover {
+          text-decoration: none;
+        }
+        .user-form {
+            margin: 5px;
+        }
+    </style>
+    
+    <div class="container-index row">
+        <div class="col-sm-9 col-sm-offset-3">
+            <h1>Welcome to Rwitter.</h1>
+            <p class="text">
+                Connect with your buddies. Chat with new friends.<br>
+                Share your adventures. Have fun! <br>
+                Just like a blog, but with less characters!
+            </p>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 user-links">
+          <button class="btn btn-lg btn-default">
+            <%= link_to "Log In", new_user_session_path %>
+          </button>
+          <button class="btn btn-lg btn-default">
+            <%= link_to "Sign Up", new_user_registration_path %>
+           </button> 
+        </div>
+        
+        <div class="col-sm-12">
+            <p class="footer-links">About  Help  Blog  Status  Jobs  Terms  Privacy  Cookies  Ads  info  Brand  Advertise  Businesses  Media  Developers  Directory © 2016 Rwitter</p>
+        </div>
+        
+    </div>
+
+<% else # if the user IS signed in, render the following %>
+
+    <script>document.location = "/home"</script>
+
+<% end %>
